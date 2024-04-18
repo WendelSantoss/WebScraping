@@ -19,10 +19,12 @@
      <img src="./webScraping/Imagens/PaginaInicial.png"/>
     </div> 
 
+
 - Página dos componentes do alimento, com todos os dados, que é possível ser acessado após clicar no alimento na página principal:
    <div aling='center'>
     <img src="./webScraping/Imagens/Componentes.png"/>
    </div> 
+
 
 - Componente de Pesquisa para pesquisar de algum alimento que possa estar cadastrado no banco de dados:
    <div aling='center'>
@@ -32,14 +34,16 @@
     <img src="./webScraping/Imagens/PesquisaFeita.png"/>
    </div> 
 
+
 - Banco de Dados com a tabela Alimentos sem o resgate dos dados:
    <div aling='center'>
-    <img src="./webScraping/Imagens/TabelaAlimentos.png"/>
+    <img src="./webScraping/Imagens/TabelaAlimentosBD.png"/>
    </div> 
 - Banco de Dados com a tabela Alimentos após o load da aplicação e resgate de dados:
    <div aling='center'>
     <img src="./webScraping/Imagens/AlimentosSalvosBD.png"/>
    </div> 
+
 
 - Banco de Dados com a tabela de Componentes antes do usuário selecionar algum alimento para pesquisar:
    <div aling='center'>
