@@ -1,0 +1,44 @@
+﻿@model IEnumerable<webScraping.Models.AlimentosModel>
+
+@{
+    ViewData["Title"] = "Pesquisa de Alimentos";
+}
+
+@if (Model != null && Model.Any())
+{
+    <h2>Alimentos Encontrados</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Nome Científico</th>
+                <th>Grupo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alimento in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Codigo</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Nome</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.NomeCientifico</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Grupo</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>Nenhum alimento foi encontrado com esse nome.</h3>
+}

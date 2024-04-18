@@ -1,0 +1,65 @@
+﻿@model IEnumerable<webScraping.Models.AlimentosModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+ 
+  
+    <div>
+        <h2>Alimentos</h2>
+
+        <label for="pesquisa">Pesquise o Alimento que você deseja visualizar:</label>
+        <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite o alimento">
+        <button id="pesquisaAlimento">Pesquisar</button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Codigo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.NomeCientifico)</th>
+                    <th>@Html.DisplayNameFor(model => model.Grupo)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var alimento in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Codigo</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Nome</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.NomeCientifico</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Index", "Componentes", new { Codigo = alimento.Codigo })">@alimento.Grupo</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    // Adiciona um evento listener quando clicar no botão pesquisar.
+    document.getElementById("pesquisaAlimento").addEventListener("click", function (event) {
+        // Obtém o valor do campo de entrada
+        var pesquisa = document.getElementById("pesquisa").value;
+
+        // Constrói a URL corretamente, substituindo a string vazia pelo valor da pesquisa
+        var url = '@Url.Action("Index", "Busca")' + '?busca=' + encodeURIComponent(pesquisa);
+
+        // Redireciona para a página de pesquisa com o valor do campo de entrada como parâmetro
+        window.location.href = url;
+
+        // Impede o comportamento padrão de submissão do formulário
+        event.preventDefault();
+    });
+</script>

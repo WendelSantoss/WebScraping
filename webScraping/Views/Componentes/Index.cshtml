@@ -1,0 +1,44 @@
+﻿@model IEnumerable<webScraping.Models.ComponentesModel>
+@{
+    ViewData["Title"] = "Componentes do Alimento";
+    var primeiroComponente = Model.FirstOrDefault();
+}
+<div class="text-center">
+
+
+    <div>
+        <h2>Componentes do Alimento com Código : @primeiroComponente.Codigo </h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Componentes</th>
+                    <th>Unidades</th>
+                    <th>Valor por 100g</th>
+                    <th>Desvio Padrão</th>
+                    <th>Valor Mínimo</th>
+                    <th>Valor Máximo</th>
+                    <th>Numero de Dados</th>
+                    <th>Referencia</th>
+                    <th>Tipo de Dados</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var componente in Model)
+                {
+              
+                    <tr>
+                        <td>@componente.Definicao</td>
+                        <td>@componente.Unidades</td>
+                        <td>@componente.ValorP100g</td>
+                        <td>@componente.DesvioP</td>
+                        <td>@componente.ValorMin</td>
+                        <td>@componente.ValorMax</td>
+                        <td>@componente.NumeroDeDados</td>
+                        <td>@componente.Referencia</td>
+                        <td>@componente.TipoDeDados</td>
+                    </tr>
+                };
+            </tbody>
+        </table>
+    </div>
+</div>
